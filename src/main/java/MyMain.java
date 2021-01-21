@@ -3,8 +3,7 @@ public class MyMain {
     // was a boat the specified coordinates. This
     // method also prints out an appropriate message
     public static boolean hit(boolean[][] board, int row, int col) { 
-        // YOUR CODE HERE
-        return false;
+        if(board[row][col] == true) {System.out.println("There was a hit!"); return true;} else {return false;}
     }
 
 
@@ -13,7 +12,16 @@ public class MyMain {
     // The remaining pieces are placed in the direction given
     // by the direction input
     public static boolean[][] placeBoat(boolean[][] board, String direction, int boatLength, int row, int col) { 
-        // YOUR CODE HERE
+        if(direction.equals("right")) {
+            for(int i = 0; i < boatLength; i++) {
+                board[row][i + col] = true;
+            }
+        }
+        if(direction.equals("down")) {
+            for(int i = 0;  i < boatLength; i++) {
+                board[i + row][col] = true;
+            }
+        }
         return board;
     }
 
