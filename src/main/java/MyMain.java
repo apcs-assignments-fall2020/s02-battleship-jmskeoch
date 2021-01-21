@@ -30,11 +30,20 @@ public class MyMain {
     // increasing length
     // You may assume that all Strings are lowercase 
     public static boolean inOrder(String[][] words) { 
-        // YOUR CODE HERE
+        for(int i = 0; i < words.length; i++) {
+            for(int j = 0; j < words[0].length-1; j++) {
+                if (!(words[i][j].length() < words[i][j+1].length())) {
+                    return false;
+                }
+                if (!(words[i][j].charAt(0) < words[i][j+1].charAt(0))) {
+                    return false;
+                }
+            }
+        }
         return false;
     }
 
     public static void main(String[] args) {
-        // You can test your code here
+        //misc
     }
 }
